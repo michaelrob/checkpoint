@@ -17,7 +17,7 @@ class XmlValidatorController {
       def xmlFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)
 
       def schema = xmlFactory.newSchema(new StreamSource(new StringReader(xsd)))
-      def validator = scheam.newValidator()
+      def validator = schema.newValidator()
 
       validator.validate(new StreamSource(new StringReader(xml)))
     }
