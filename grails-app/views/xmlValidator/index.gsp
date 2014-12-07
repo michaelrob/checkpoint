@@ -21,7 +21,7 @@
           <g:textArea name="xsd" rows="5" cols="40"/>
 
           <br />
-          <g:actionSubmit value="submit" action="show" class="button"/>
+          <g:actionSubmit value="submit" action="show" type="button" class="btn btn-primary"/>
         </form>
       </div>
     </div>

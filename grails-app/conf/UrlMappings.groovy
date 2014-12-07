@@ -10,6 +10,6 @@ class UrlMappings {
         "/"(view:"/index")
         "500"(view:'/error')
 
-				"/validate" (controller: "xmlValidator", action: "index")
+		"/validate" (controller: "xmlValidator", action: "index")
 	}
 }

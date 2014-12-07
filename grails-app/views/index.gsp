@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>XML Validator</title>
+    <title>Home</title>
 
     <meta name="layout" content="main"/>
     <r:require modules="bootstrap"/>
@@ -10,7 +10,10 @@
 <div id="index">
 
     <div class="container">
+        <br />
+        <br />
 
+        <p>Test test</p>
 
     </div>
 </div>
