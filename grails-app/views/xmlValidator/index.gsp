@@ -11,7 +11,7 @@
 
       <div class="container">
 
-        <form class="index" id="validateXml">
+        <form class="index" id="validateXml" method="post">
           <br />
           <br />
 
