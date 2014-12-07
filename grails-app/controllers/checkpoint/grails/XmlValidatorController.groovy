@@ -8,11 +8,11 @@ class XmlValidatorController {
 
     def index() { }
 
-    def validateXML() {
+    def validateXml() {
       //validate all of the things
 
       def xml
-      def schema
+      def xsd
 
       def xmlFactory = SchemaFactory.newInstance(XMLConstants.W3_XML_SCHEMA_NS_URI)
 
