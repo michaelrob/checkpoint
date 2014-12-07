@@ -17,27 +17,30 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">Checkpoint</a>
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#validate">Validate</a></li>
+              <li><a href="#recon">Recon</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </nav>
 
       <div class="container">
 
         <form class="index" id="validateXml" action="validateXml">
+          <br />
+          <br />
 
           <h4>XML</h4>
           <g:textArea name="xml" rows="5" cols="40"/><br />
           <h4>XSD</h4>
           <g:textArea name="xsd" rows="5" cols="40"/>
 
+          <br />
           <g:submitButton name="submit" value="submit" class="button"/>
         </form>
       </div>
