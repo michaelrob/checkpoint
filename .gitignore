@@ -1,0 +1,15 @@
+*.iml
+*.ipr
+*.iws
+*.log
+.classpath
+.idea/workspace.xml
+.project
+.settings
+.idea
+grails-plugin-*.zip
+out
+plugin.xml
+target
+x-local
+.sass-cache
