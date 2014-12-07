@@ -11,8 +11,8 @@ class XmlValidatorController {
     def show() {
       //validate all of the things
 
-      def xml = params.xml
-      def xsd = params.xsd
+      def xml = params.xml.toString()
+      def xsd = params.xsd.toString()
 
       def xmlFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)
 
