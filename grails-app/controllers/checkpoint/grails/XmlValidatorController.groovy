@@ -8,13 +8,13 @@ class XmlValidatorController {
 
     def index() { }
 
-    def validateXml() {
+    def show() {
       //validate all of the things
 
       def xml
       def xsd
 
-      def xmlFactory = SchemaFactory.newInstance(XMLConstants.W3_XML_SCHEMA_NS_URI)
+      def xmlFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)
 
       def schema = xmlFactory.newSchema(new StreamSource(new StringReader(xsd)))
       def validator = scheam.newValidator()
