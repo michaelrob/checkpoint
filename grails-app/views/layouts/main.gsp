@@ -19,7 +19,7 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li><a href="/checkpoint-grails/">Home</a></li>
 					<li><a href="/checkpoint-grails/validate">Validate</a></li>
 					<li><a href="#recon">Recon</a></li>
 				</ul>
