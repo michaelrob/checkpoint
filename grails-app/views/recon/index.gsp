@@ -34,6 +34,10 @@
                         <label for="password">Password</label>
                         <input type="text" class="form-control" id="password" placeholder="Password">
                     </div>
+                    <div class="form-group">
+                        <label for="hotelCode">Hotel Code</label>
+                        <input type="text" class="form-control" id="hotelCode" placeholder="Hotel Code">
+                    </div>
                 </div>
             </div>
 

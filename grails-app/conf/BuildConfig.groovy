@@ -60,12 +60,13 @@ grails.project.dependency.resolution = {
         // plugins for the compile step
         compile ":scaffolding:2.0.3"
         compile ':cache:1.1.7'
+        compile ":twitter-bootstrap:3.3.1"
+        compile ":wslite:0.7.2.0"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.16"
         runtime ":database-migration:1.4.0"
         runtime ":jquery:1.11.1"
         runtime ":resources:1.2.8"
-        compile ":twitter-bootstrap:3.3.1"
     }
 }
