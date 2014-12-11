@@ -21,7 +21,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="/checkpoint-grails/">Home</a></li>
 					<li><a href="/checkpoint-grails/validate">Validate</a></li>
-					<li><a href="#recon">Recon</a></li>
+					<li><a href="/checkpoint-grails/recon">Recon</a></li>
 				</ul>
 			</div>
 		</div>

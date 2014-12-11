@@ -11,5 +11,6 @@ class UrlMappings {
         "500"(view:'/error')
 
 		"/validate" (controller: "xmlValidator", action: "index")
+        "/recon" (controller: "recon", action: "index")
 	}
 }
