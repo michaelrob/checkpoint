@@ -1,6 +1,5 @@
-package checkpoint.recon.debug
 
-@Grab(group='com.github.groovy-wslite', module='groovy-wslite', version='1.1.0')
+//@Grab(group='com.github.groovy-wslite', module='groovy-wslite', version='1.1.0')
 import wslite.soap.*
 import groovy.xml.XmlUtil
 import groovy.util.slurpersupport.GPathResult
@@ -8,31 +7,33 @@ import org.apache.commons.lang.time.DateFormatUtils
 
 class debugClient {
 
-  String soapAction = "http://www.siteminder.com.au/siteconnect/HotelAvailRQ"
-  String uri = "http://localhost:6980/MathServiceInterface?wsdl"
-  String username = ""
-  String password = ""
+    def doRecn() {
 
-  String hotelCode
+        String soapAction = "http://www.siteminder.com.au/siteconnect/HotelAvailRQ"
+        String uri = "http://localhost:6980/MathServiceInterface?wsdl"
+        String username = ""
+        String password = ""
 
-  if(!soapAction || !url || !username || !password) {
-    println "Missing configuration options"
-  }
+        String hotelCode = ""
 
-  if(!hotelCode) {
-    println "Missing hotel code"
-  }
+        if(!soapAction || !uri || !username || !password) {
+            println "Missing configuration options"
+        }
 
-  Map soapRequest = [
-    headers: headerXml(username, password)
-    payload: bodyXml(hotelCode)
-  ]
+        if(!hotelCode) {
+            println "Missing hotel code"
+        }
 
-  def client = new SOAPClient(wsdl)
+        Map soapRequest = [
+            headers: headerXml(username, password),
+            payload: bodyXml(hotelCode)
+        ]
 
-  def response = clint.send(SOAPAction: soapAction) {
+        // def client = new SOAPClient(wsdl)
 
-  }
+        // def response = clint.send(SOAPAction: soapAction) {       }
+
+    }
 
   private String headerXml(String username, String password) {
     xml = """
