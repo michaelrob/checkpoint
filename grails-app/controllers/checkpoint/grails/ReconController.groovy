@@ -33,8 +33,8 @@ class ReconController {
     }
 
     private String headerXml(String username, String password) {
-        xml = """
-    mkp.declareNamespace(soap:"http://schemas.xmlsoap.org/soap/envelope/")
+        def xml = """
+            mkp.declareNamespace(soap:"http://schemas.xmlsoap.org/soap/envelope/")
             mkp.declareNamespace(wsse:"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd")
             'wsse:Security'('soap:mustUnderstand': "1") {
                 'wsse:UsernameToken' {
@@ -50,20 +50,20 @@ class ReconController {
         def echoToken = UUID.randomUUID().toString()
         def timestamp = DateFormatUtils.ISO_DATETIME_TIME_ZONE_FORMAT.format(new Date())
 
-        xml = """
-    mkp.declareNamespace("": "http://www.opentravel.org/OTA/2003/05")
-    OTA_HotelAvailRQ(Version: "1.0", TimeStamp: timestamp, EchoToken: $echoToken, AvailRatesOnly: "true") {
-        AvailRequestSegments {
-            AvailRequestSegment(AvailReqType: "Room") {
-                HotelSearchCriteria {
-                    Criterion {
-                        HotelRef(HotelCode: $hotelCode)
+        def xml = """
+            mkp.declareNamespace("": "http://www.opentravel.org/OTA/2003/05")
+            OTA_HotelAvailRQ(Version: "1.0", TimeStamp: timestamp, EchoToken: $echoToken, AvailRatesOnly: "true") {
+                AvailRequestSegments {
+                    AvailRequestSegment(AvailReqType: "Room") {
+                        HotelSearchCriteria {
+                            Criterion {
+                                HotelRef(HotelCode: $hotelCode)
+                            }
+                        }
                     }
                 }
             }
-        }
-    }
-    """
+        """
 
         return XmlUtil.serialize(xml as GPathResult)
     }

@@ -9,12 +9,20 @@ import spock.lang.Specification
 @TestFor(ReconController)
 class ReconControllerSpec extends Specification {
 
+    ReconController reconController
+
     def setup() {
+        reconController = new ReconController()
     }
 
     def cleanup() {
     }
 
     void "test something"() {
+        when:
+        reconController.show()
+
+        then:
+        response.text == "wont work"
     }
 }
