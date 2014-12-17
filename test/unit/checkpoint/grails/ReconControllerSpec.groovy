@@ -23,7 +23,7 @@ class ReconControllerSpec extends Specification {
         params.uri = "http://test.my.pyotravel.com/ws/ota"
         params.username = "W1M_XML_USR"
         params.password = "xml123456"
-        params.hotelcode = "MYW1M5361H"
+        params.hotelCode = "MYW1M5361H"
         def show = reconController.show()
 
         then:

@@ -30,7 +30,7 @@ class ReconController {
 
         def client = new SOAPClient(uri)
         try {
-            def response = client.send(SOAPAction: "http://www.siteminder.com.au/siteconnect/HotelAvailRQ", request)
+            def response = client.send(SOAPAction: soapAction, request)
         } catch (SOAPFaultException e) {
             println e.text
             println e.message
