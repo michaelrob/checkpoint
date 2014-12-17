@@ -1,3 +1,4 @@
+<%@ page import="checkpoint.grails.ReconController" %>
 <!DOCTYPE html>
 <head>
     <title>Recon</title>
@@ -52,7 +53,7 @@
             <h4>Request</h4>
             <div class="col-md-12">
                 <div class="well well-sm">
-                    request XML
+                    ${ReconController.request}
                 </div>
             </div>
         </div>
@@ -61,7 +62,7 @@
             <h4>Response</h4>
             <div class="col-md-12">
                 <div class="well well-sm">
-                    response XML
+                    ${ReconController.response}
                 </div>
             </div>
         </div>
