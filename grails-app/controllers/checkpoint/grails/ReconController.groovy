@@ -29,7 +29,12 @@ class ReconController {
         def request = generateXml(username, password, hotelCode)
 
         def client = new SOAPClient(uri)
-        def response = client.send(SOAPAction: soapAction, request)
+        try {
+            def response = client.send(SOAPAction: "http://www.siteminder.com.au/siteconnect/HotelAvailRQ", request)
+        } catch (SOAPFaultException e) {
+            println e.text
+            println e.message
+        }
     }
 
     private static String generateXml(username, password, hotelCode) {
