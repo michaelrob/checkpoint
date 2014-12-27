@@ -43,8 +43,8 @@ class ReconController {
     <SOAP-ENV:Header xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
         <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:mustUnderstand="1">
             <wsse:UsernameToken>
-                <wsse:Username>$username</wsse:Username>
-                <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">$password</wsse:Password>
+                <wsse:Username>${username}</wsse:Username>
+                <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">${password}</wsse:Password>
             </wsse:UsernameToken>
         </wsse:Security>
     </SOAP-ENV:Header>
@@ -54,7 +54,7 @@ class ReconController {
                 <AvailRequestSegment AvailReqType="Room">
                     <HotelSearchCriteria>
                         <Criterion>
-                            <HotelRef HotelCode="$hotelCode"/>
+                            <HotelRef HotelCode="${hotelCode}"/>
                         </Criterion>
                     </HotelSearchCriteria>
                 </AvailRequestSegment>
