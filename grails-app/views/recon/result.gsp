@@ -53,7 +53,7 @@
             <h4>Request</h4>
             <div class="col-md-12">
                 <div class="well well-sm">
-
+                  ${request}
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
             <h4>Response</h4>
             <div class="col-md-12">
                 <div class="well well-sm">
-
+                    ${response}
                 </div>
             </div>
         </div>
