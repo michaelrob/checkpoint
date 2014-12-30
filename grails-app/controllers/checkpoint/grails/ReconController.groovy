@@ -31,8 +31,9 @@ class ReconController {
         def client = new SOAPClient(uri)
         try {
             def response = client.send(SOAPAction: soapAction, request)
-            render(view: "result", model: [uri: uri, username: username, password: password, hotelCode: hotelCode, request: request, response: response.text])
+            return [soapAction: soapAction, uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request, xmlResponse: response.text]
         } catch (SOAPFaultException e) {
+            return [soapAction: soapAction, uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request, xmlResponse: e.text, xmlError: e.message]
             println e.text
             println e.message
         }
