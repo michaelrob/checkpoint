@@ -32,10 +32,10 @@ class ReconController {
         try {
             def response = client.send(SOAPAction: soapAction, request)
             return [soapAction: soapAction, uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request, xmlResponse: response.text]
-        } catch (SOAPFaultException e) {
-            return [soapAction: soapAction, uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request, xmlResponse: e.text, xmlError: e.message]
-            println e.text
-            println e.message
+        } catch (SOAPFaultException sfe) {
+            return [soapAction: soapAction, uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request, xmlResponse: sfe.text, xmlError: sfe.message]
+        } catch (SOAPClientException sce) {
+            return [soapAction: soapAction, uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request, xmlError: sce]
         }
     }
 
@@ -66,5 +66,13 @@ class ReconController {
 </SOAP-ENV:Envelope>
 """
         return xml
+    }
+
+    private def validateXml() {
+      //validate all of the xml
+    }
+
+    private def roomTypes() {
+      //try and determine any roomTypes if validation passes
     }
 }

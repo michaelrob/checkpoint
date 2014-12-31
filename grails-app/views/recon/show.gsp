@@ -32,30 +32,35 @@
         </div>
       </div>
 
-      <div class="row">
-        <h4>Request</h4>
-        <div class="col-md-12">
-          <div class="well well-sm">
-            <p>
-              ${xmlRequest}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <h4>Response</h4>
-        <div class="col-md-12">
-          <div class="well well-sm">
-            <p>
-              ${xmlResponse}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <g:if ${xmlError}=true>
+      <g:if test=${xmlRequest}>
         <div class="row">
+          <h4>Request</h4>
+          <div class="col-md-12">
+            <div class="well well-sm">
+              <p>
+                ${xmlRequest}
+              </p>
+            </div>
+          </div>
+        </div>
+      </g:if>  
+
+      <g:if test=${xmlResponse}>
+        <div class="row">
+          <h4>Response</h4>
+          <div class="col-md-12">
+            <div class="well well-sm">
+              <p>
+                ${xmlResponse}
+              </p>
+            </div>
+          </div>
+        </div>
+     </g:if>
+
+      <g:if test="${xmlError}">
+        <div class="row">
+          <h4>Error</h4>
           <div class="col-md-12">
             <p class="alert alert-danger" role="alert">${xmlError}</p>
           </div>
