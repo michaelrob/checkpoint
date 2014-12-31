@@ -22,7 +22,7 @@ class XmlValidatorController {
 
           def errorMessage = validator.validate(new StreamSource(new StringReader(xml)))
       } catch(e) {
-        render("Problems $e")
+        return [xmlError: e]
       }
     }
 }
