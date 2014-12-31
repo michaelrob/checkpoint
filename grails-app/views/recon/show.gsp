@@ -32,7 +32,7 @@
         </div>
       </div>
 
-      <g:if test=${xmlRequest}>
+      <g:if test="${xmlRequest}">
         <div class="row">
           <h4>Request</h4>
           <div class="col-md-12">
@@ -43,9 +43,9 @@
             </div>
           </div>
         </div>
-      </g:if>  
+      </g:if>
 
-      <g:if test=${xmlResponse}>
+      <g:if test="${xmlResponse}">
         <div class="row">
           <h4>Response</h4>
           <div class="col-md-12">
