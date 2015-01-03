@@ -87,7 +87,7 @@ class ReconController {
 
           String name = ratePlanName ? roomTypeName + ' - ' + ratePlanName : roomTypeName
 
-          roomTypes.add(["room-type-code": roomTypeCode, "rate-plan-code": ratePlanCode])
+          roomTypes.add(["name": name,"room-type-code": roomTypeCode, "room-type-name": roomTypeName, "rate-plan-code": ratePlanCode, "rate-plan-name": ratePlanName])
       }
       return roomTypes
     }
