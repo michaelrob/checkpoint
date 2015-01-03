@@ -31,7 +31,9 @@ class ReconController {
         def client = new SOAPClient(uri)
         try {
             def response = client.send(SOAPAction: soapAction, request)
-            return [soapAction: soapAction, uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request, xmlResponse: response.text]
+            def roomTypes = extractRoomTypes(response.body)
+
+            return [soapAction: soapAction, uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request, xmlResponse: response.text, roomTypes: roomTypes]
         } catch (SOAPFaultException sfe) {
             return [soapAction: soapAction, uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request, xmlResponse: sfe.text, xmlError: sfe.message]
         } catch (SOAPClientException sce) {
@@ -72,7 +74,21 @@ class ReconController {
       //validate all of the xml
     }
 
-    private def roomTypes() {
+    private def extractRoomTypes(GPathResult body) {
       //try and determine any roomTypes if validation passes
+
+      def roomTypes = []
+
+      body.OTA_HotelAvailRS.RoomStays.RoomStay.each { roomStay ->
+          String roomTypeCode = roomStay.RoomTypes.RoomType[0].@RoomTypeCode.text()
+          String roomTypeName = roomStay.RoomTypes.RoomType[0].RoomDescription.@Name.text()
+          String roomPlanCode = roomStay.RoomTypes.RoomType[0].@RatePlanCode.text()
+          String ratePlanName = roomStay.RoomTypes.RoomType[0].RatePlanDescription.@Name.text()
+
+          String name = ratePlanName ? roomTypeName + ' - ' + ratePlanName : roomTypeName
+
+          roomTypes.add(["room-type-code": roomTypeCode, "rate-plan-code": ratePlanCode])
+      }
+      return roomTypes
     }
 }
