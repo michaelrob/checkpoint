@@ -32,6 +32,20 @@
         </div>
       </div>
 
+      <div class="row">
+        <h4>Room Types</h4>
+        <g:each var="roomTypes" in="${roomTypes}">
+        <div class="col-md-3">
+          <p>
+            RoomName: <br />
+            RoomCode: <br />
+            RateCode: <br />
+          </p>
+        </div>
+        <br />
+      </g:each>
+      </div>
+
       <g:if test="${xmlRequest}">
         <div class="row">
           <h4>Request</h4>
