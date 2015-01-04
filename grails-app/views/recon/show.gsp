@@ -34,17 +34,21 @@
 
       <div class="row">
         <h4>Room Types</h4>
-        <g:each var="roomTypes" in="${roomTypes}">
-        <div class="col-md-3">
-          <p>
-            RoomName: <br />
-            RoomCode: <br />
-            RateCode: <br />
-          </p>
-        </div>
-        <br />
-      </g:each>
       </div>
+      <g:each var="rooms" in="${roomTypes}">
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              Room Name: ${rooms.name}<br />
+              Room Code: ${rooms."room-type-code"}<br />
+              Room Description: ${rooms."room-type-name"}<br />
+              Rate Code: ${rooms."rate-type-code"}<br />
+              Rate Description: ${rooms."rate-type-name"}
+            </p>
+          </div>
+        </div>
+      </g:each>
+
 
       <g:if test="${xmlRequest}">
         <div class="row">
