@@ -42,6 +42,9 @@ class ReconController {
     }
 
     private static String generateXml(username, password, hotelCode) {
+        def timeStamp = DateFormatUtils.ISO_DATETIME_TIME_ZONE_FORMAT.format(new Date())
+        def echoToken = UUID.randomUUID().toString()
+
         def xml = """<?xml version="1.0"?>
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
     <SOAP-ENV:Header xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
@@ -53,7 +56,7 @@ class ReconController {
         </wsse:Security>
     </SOAP-ENV:Header>
     <SOAP-ENV:Body xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
-        <OTA_HotelAvailRQ xmlns="http://www.opentravel.org/OTA/2003/05" AvailRatesOnly="true" EchoToken="e01b39e8-962f-4078-ad93-8070c2e2f1a7" TimeStamp="2014-12-16T13:16:46+11:00" Version="1.0">
+        <OTA_HotelAvailRQ xmlns="http://www.opentravel.org/OTA/2003/05" AvailRatesOnly="true" EchoToken="${echoToken}" TimeStamp="${timeStamp}" Version="1.0">
             <AvailRequestSegments>
                 <AvailRequestSegment AvailReqType="Room">
                     <HotelSearchCriteria>
