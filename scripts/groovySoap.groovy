@@ -10,11 +10,11 @@ class debugClient {
     def doRecn() {
 
         String soapAction = "http://www.siteminder.com.au/siteconnect/HotelAvailRQ"
-        String uri = "http://localhost:6980/MathServiceInterface?wsdl"
-        String username = ""
-        String password = ""
+        String uri = "http://lcbtestcmhandler.ivector.co.uk/handlers/siteminderhandler.ashx"
+        String username = "test@Test.com"
+        String password = "test"
 
-        String hotelCode = ""
+        String hotelCode = "36565"
 
         if(!soapAction || !uri || !username || !password) {
             println "Missing configuration options"

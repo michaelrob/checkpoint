@@ -20,10 +20,10 @@ class ReconControllerSpec extends Specification {
 
     void "test show should return xml response"() {
         when:
-        params.uri = "http://test.my.pyotravel.com/ws/ota"
-        params.username = "W1M_XML_USR"
-        params.password = "xml123456"
-        params.hotelCode = "MYW1M5361H"
+        params.uri = "http://lcbtestcmhandler.ivector.co.uk/handlers/siteminderhandler.ashx"
+        params.username = "test@Test.com"
+        params.password = "test"
+        params.hotelCode = "36565"
         def show = reconController.show()
 
         then:

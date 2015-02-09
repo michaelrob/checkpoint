@@ -1,0 +1,66 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.opentravel.org/OTA/2003/05" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="OTA_HotelAvailRS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="Success"/>
+        <xs:element name="RoomStays">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RoomStay" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="RoomTypes">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="RoomType">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="RoomDescription">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="Text" minOccurs="0" maxOccurs="1"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:string" name="Name" use="required"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="RoomTypeCode" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="RatePlans">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="RatePlan">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="RatePlanDescription">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="Text" minOccurs="0" maxOccurs="1"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:string" name="Name" use="required"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="RatePlanCode" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:float" name="Version"/>
+      <xs:attribute type="xs:dateTime" name="TimeStamp"/>
+      <xs:attribute type="xs:string" name="EchoToken"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,5 +1,6 @@
 package checkpoint.grails
 
+import checkpoint.ValidateXml
 import groovy.util.slurpersupport.GPathResult
 import groovy.xml.XmlUtil
 import org.apache.commons.lang.time.DateFormatUtils
@@ -11,6 +12,7 @@ class ReconController {
 
     def show() {
         //do recon things
+        //toDo: put this into its own class
 
         String soapAction = "http://www.siteminder.com.au/siteconnect/HotelAvailRQ"
         String uri = params.uri.toString()
@@ -29,6 +31,18 @@ class ReconController {
         def request = generateXml(username, password, hotelCode)
 
         def client = new SOAPClient(uri)
+
+        //toDo: add the below commented code to pretty format the XML
+        /*
+        def stringWriter = new StringWriter()
+        def node = new XmlParser().parseText(xml);
+        new XmlNodePrinter(new PrintWriter(stringWriter)).print(node)
+
+        println stringWriter.toString()
+         */
+
+        //toDo: complete common returns
+        def common = [uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request]
         try {
             def response = client.send(SOAPAction: soapAction, request)
             def roomTypes = extractRoomTypes(response.body)
@@ -73,8 +87,10 @@ class ReconController {
         return xml
     }
 
-    private def validateXml() {
-      //validate all of the xml
+    private def validate() {
+        //validate all of the xml against xsd schema
+
+        //check uuid
     }
 
     private def extractRoomTypes(GPathResult body) {

@@ -18,16 +18,16 @@
         <h4>Properties</h4>
         <div class="col-md-6">
           <p>
-            Action: ${soapAction}<br />
-            Uri: ${uri}
+            <b>Action:</b> ${soapAction}<br />
+            <b>Uri:</b> ${uri}
           </p>
         </div>
 
         <div class="col-md-6">
           <p>
-            Hotel Code: ${hotelCode}<br />
-            Username: ${username}<br />
-            Password: ${password}
+            <b>Hotel Code:</b> ${hotelCode}<br />
+            <b>Username:</b> ${username}<br />
+            <b>Password:</b> ${password}
           </p>
         </div>
       </div>
@@ -39,11 +39,11 @@
         <div class="row">
           <div class="col-md-12">
             <p>
-              Room Name: ${rooms.name}<br />
-              Room Code: ${rooms."room-type-code"}<br />
-              Room Description: ${rooms."room-type-name"}<br />
-              Rate Code: ${rooms."rate-type-code"}<br />
-              Rate Description: ${rooms."rate-type-name"}
+              <b>Room Name:</b> ${rooms.name}<br />
+              <b>Room Code:</b> ${rooms."room-type-code"}<br />
+              <b>Room Description:</b> ${rooms."room-type-name"}<br />
+              <b>Rate Code:</b> ${rooms."rate-type-code"}<br />
+              <b>Rate Description:</b> ${rooms."rate-type-name"}
             </p>
           </div>
         </div>
