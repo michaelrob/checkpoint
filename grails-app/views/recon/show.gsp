@@ -8,6 +8,13 @@
 
 </head>
 <body>
+
+  <script>
+    $('#roomList li a').on('click', function(){
+      $('#selectedRoom').val($(this).html());
+    });
+  </script>
+
   <div id="index">
 
     <div class="container">
@@ -38,11 +45,11 @@
 
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-          Available Room Types
+          <span class="caret" id="selectedRoom"></span>
         </button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
           <g:each var="rooms" in="${roomTypes}">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">${room.name}</a></li>
+            <li role="roomList"><a role="menuitem" tabindex="-1" href="#">${rooms.name}</a></li>
           </g:each>
         </ul>
       </div>
@@ -51,7 +58,7 @@
         <div class="row">
           <div class="col-md-12">
             <p>
-              <b>Room Name:</b> ${rooms.name}<br />
+              <b>Room Name:</b> ${rooms.name}<br /><br />
               <b>Room Code:</b> ${rooms."room-type-code"}<br />
               <b>Room Description:</b> ${rooms."room-type-name"}<br />
               <b>Rate Code:</b> ${rooms."rate-plan-code"}<br />
