@@ -42,8 +42,8 @@
               <b>Room Name:</b> ${rooms.name}<br />
               <b>Room Code:</b> ${rooms."room-type-code"}<br />
               <b>Room Description:</b> ${rooms."room-type-name"}<br />
-              <b>Rate Code:</b> ${rooms."rate-type-code"}<br />
-              <b>Rate Description:</b> ${rooms."rate-type-name"}
+              <b>Rate Code:</b> ${rooms."rate-plan-code"}<br />
+              <b>Rate Description:</b> ${rooms."rate-plan-name"}
             </p>
           </div>
         </div>

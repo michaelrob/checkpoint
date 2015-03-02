@@ -101,8 +101,8 @@ class ReconController {
       body.OTA_HotelAvailRS.RoomStays.RoomStay.each { roomStay ->
           String roomTypeCode = roomStay.RoomTypes.RoomType[0].@RoomTypeCode.text() ?: "no value"
           String roomTypeName = roomStay.RoomTypes.RoomType[0].RoomDescription.@Name.text() ?: "no value"
-          String ratePlanCode = roomStay.RoomTypes.RoomType[0].@RatePlanCode.text() ?: "no value"
-          String ratePlanName = roomStay.RoomTypes.RoomType[0].RatePlanDescription.@Name.text() ?: "no value"
+          String ratePlanCode = roomStay.RatePlans.RatePlan[0].@RatePlanCode.text() ?: "no value"
+          String ratePlanName = roomStay.RatePlans.RatePlan[0].RatePlanDescription.@Name.text() ?: "no value"
 
           String name = ratePlanName ? roomTypeName + ' - ' + ratePlanName : roomTypeName
 
