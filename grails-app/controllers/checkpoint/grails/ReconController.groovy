@@ -42,7 +42,7 @@ class ReconController {
          */
 
         //toDo: complete common returns
-        def common = [uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request]
+        def common = [soapAction: soapAction, uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request]
         try {
             def response = client.send(SOAPAction: soapAction, request)
             def roomTypes = extractRoomTypes(response.body)
