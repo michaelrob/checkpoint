@@ -35,6 +35,18 @@
       <div class="row">
         <h4>Room Types</h4>
       </div>
+
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+          Available Room Types
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <g:each var="rooms" in="${roomTypes}">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">${room.name}</a></li>
+          </g:each>
+        </ul>
+      </div>
+
       <g:each var="rooms" in="${roomTypes}">
         <div class="row">
           <div class="col-md-12">
