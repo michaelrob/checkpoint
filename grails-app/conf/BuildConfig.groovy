@@ -37,8 +37,8 @@ grails.project.dependency.resolution = {
 
         grailsPlugins()
         grailsHome()
-        mavenLocal()
         grailsCentral()
+        mavenLocal()
         mavenCentral()
     }
 
