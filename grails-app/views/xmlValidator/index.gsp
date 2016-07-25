@@ -15,10 +15,17 @@
           <br />
           <br />
 
-          <h4>XML</h4>
-          <g:textArea name="xml" rows="5" cols="40"/><br />
-          <h4>XSD</h4>
-          <g:textArea name="xsd" rows="5" cols="40"/>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>XML</h4>
+              <g:textArea name="xml" rows="5" cols="40"/><br />
+            </div>
+
+            <div class="col-md-6">
+              <h4>XSD</h4>
+              <g:textArea name="xsd" rows="5" cols="40"/>
+            </div>
+          </div>
 
           <br />
           <br />
