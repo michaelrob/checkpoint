@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<g:layoutTitle/>
-	<r:layoutResources/>
+    <g:layoutTitle/>
+    <r:require module='application' />
+    <r:layoutResources/>
 </head>
 <body>
 	
