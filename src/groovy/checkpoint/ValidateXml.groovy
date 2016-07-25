@@ -6,7 +6,7 @@ import javax.xml.validation.SchemaFactory
 
 class ValidateXml {
 
-    def valid(String xml, String xsd) {
+    static def valid(String xml, String xsd) {
 
         def xmlFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)
 
