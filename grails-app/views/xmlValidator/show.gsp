@@ -10,10 +10,6 @@
       <div class="container">
         <br />
         <br />
-
-        <p>
-          Show things
-        </p>
       </div>
     </div>
   </body>
