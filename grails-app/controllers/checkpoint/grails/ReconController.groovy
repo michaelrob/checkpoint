@@ -33,16 +33,7 @@ class ReconController {
 
         def client = new SOAPClient(uri)
 
-        //toDo: add the below commented code to pretty format the XML
-        /*
-        def stringWriter = new StringWriter()
-        def node = new XmlParser().parseText(xml);
-        new XmlNodePrinter(new PrintWriter(stringWriter)).print(node)
-
-        println stringWriter.toString()
-         */
-
-        //toDo: complete common returns
+         //toDo: complete common returns
         def common = [soapAction: soapAction, uri: uri, username: username, password: password, hotelCode: hotelCode, xmlRequest: request]
         try {
             def response = client.send(SOAPAction: soapAction, request)
