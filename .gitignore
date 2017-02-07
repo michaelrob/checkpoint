@@ -13,3 +13,5 @@ plugin.xml
 target
 x-local
 .sass-cache
+build
+.gradle
