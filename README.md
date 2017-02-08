@@ -11,3 +11,5 @@ Checkpoint uses Gradle as its build manager.
 
 2. Because we're using the `spring-boot-gradle-plugin` plugin we can use the following: `gradle bootrun`
 
+If you're using default settings, the site is hosted at `localhost:8080`.
+
